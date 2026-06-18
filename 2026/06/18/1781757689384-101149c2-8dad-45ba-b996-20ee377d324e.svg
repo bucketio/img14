@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#fff"/>
+  <g fill="none" stroke="#111" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="180" y="350" width="390" height="110" rx="55"/>
+    <path d="M260 408h180"/>
+    <path d="M650 450c120 130 280 130 400 0" stroke="#f28c28" stroke-width="8"/>
+    <path d="M1030 432l25 20-35 10" stroke="#f28c28" stroke-width="8"/>
+    <path d="M1030 240l280 20 0 420-280 20z"/>
+    <path d="M1080 300l175 14"/>
+    <path d="M1110 380l115 0"/>
+    <path d="M1130 470l95 22"/>
+    <path d="M1190 610l55-65"/>
+  </g>
+  <g fill="#111">
+    <path d="M300 210c58-10 96 18 103 74 8 58-20 98-78 103-62 5-101-25-105-83-4-50 25-84 80-94z"/>
+    <circle cx="294" cy="292" r="8" fill="#fff"/><circle cx="335" cy="287" r="8" fill="#fff"/>
+    <path d="M285 385c-10 42-20 74-42 98" stroke="#111" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M350 383c16 42 26 68 50 96" stroke="#111" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M1165 180c70-8 112 28 115 95 3 70-33 110-100 113-66 3-106-33-112-94-6-63 30-105 97-114z"/>
+    <circle cx="1148" cy="270" r="9" fill="#fff"/><circle cx="1195" cy="267" r="9" fill="#fff"/>
+    <path d="M1135 386c-14 55-24 90-52 123" stroke="#111" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M1215 386c18 52 32 83 62 112" stroke="#111" stroke-width="6" fill="none" stroke-linecap="round"/>
+  </g>
+  <g font-family="KaiTi, STKaiti, SimSun, serif" font-size="42" fill="#111">
+    <text x="240" y="530">问一句</text>
+    <text x="730" y="390" fill="#f28c28">给现场</text>
+    <text x="1070" y="750">进去推进</text>
+    <text x="1260" y="205" fill="#2f6fbd">会动手</text>
+    <text x="1090" y="235">项目现场</text>
+  </g>
+</svg>
