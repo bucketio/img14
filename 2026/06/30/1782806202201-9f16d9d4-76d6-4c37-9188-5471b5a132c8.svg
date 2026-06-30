@@ -1,0 +1,42 @@
+<svg width="1200" height="560" viewBox="0 0 1200 560" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">修改建议示例卡</title>
+  <desc id="desc">An infographic showing a before-after revision card for an NSFC proposal title and scientific question.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#fff7ed"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="14" stdDeviation="15" flood-color="#0f172a" flood-opacity="0.13"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="560" rx="34" fill="url(#bg)"/>
+  <rect x="48" y="42" width="1104" height="476" rx="28" fill="#ffffff" opacity="0.84" stroke="#fed7aa"/>
+  <text x="92" y="106" font-family="Noto Sans SC, Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="38" font-weight="800" fill="#0f172a">修改建议不是简单润色</text>
+  <text x="94" y="145" font-family="Noto Sans SC, Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#475569">重点是把“任务表述”改成更清楚的研究问题和论证链条</text>
+
+  <g filter="url(#shadow)">
+    <rect x="94" y="200" width="452" height="252" rx="22" fill="#fff1f2" stroke="#fecdd3"/>
+    <rect x="126" y="232" width="94" height="32" rx="16" fill="#e11d48"/>
+    <text x="173" y="254" text-anchor="middle" font-family="Noto Sans SC, Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="800" fill="white">修改前</text>
+    <text x="126" y="306" font-family="Noto Sans SC, Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="23" font-weight="800" fill="#881337">如何构建高精度模型并提升识别效果？</text>
+    <rect x="126" y="346" width="356" height="12" rx="6" fill="#fda4af"/>
+    <rect x="126" y="374" width="300" height="12" rx="6" fill="#fecdd3"/>
+    <text x="126" y="420" font-family="Noto Sans SC, Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" fill="#475569">问题：更像技术目标，科学问题不够清楚。</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="654" y="200" width="452" height="252" rx="22" fill="#ecfeff" stroke="#99f6e4"/>
+    <rect x="686" y="232" width="94" height="32" rx="16" fill="#0f766e"/>
+    <text x="733" y="254" text-anchor="middle" font-family="Noto Sans SC, Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="800" fill="white">修改后</text>
+    <text x="686" y="304" font-family="Noto Sans SC, Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" font-weight="800" fill="#115e59">[机制/变量]如何影响[对象]的表征稳定性，</text>
+    <text x="686" y="338" font-family="Noto Sans SC, Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" font-weight="800" fill="#115e59">并约束[模型或方法]的适用边界？</text>
+    <rect x="686" y="374" width="360" height="12" rx="6" fill="#5eead4"/>
+    <rect x="686" y="402" width="294" height="12" rx="6" fill="#99f6e4"/>
+  </g>
+
+  <path d="M560 326 H636" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+  <path d="M620 302 L646 326 L620 350" stroke="#64748b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="304" y="478" width="592" height="42" rx="21" fill="#fef3c7" stroke="#fcd34d"/>
+  <text x="600" y="505" text-anchor="middle" font-family="Noto Sans SC, Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" font-weight="700" fill="#92400e">修改重点：从“做什么”转向“为什么、如何证明、边界在哪里”</text>
+</svg>
