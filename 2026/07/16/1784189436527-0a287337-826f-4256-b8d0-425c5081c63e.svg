@@ -1,0 +1,82 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" width="700" height="400">
+  <rect width="700" height="400" fill="#f5f0e8"/>
+  
+  <!-- Desk surface -->
+  <rect x="30" y="120" width="640" height="220" rx="3" fill="#6b4226"/>
+  <rect x="30" y="120" width="640" height="8" fill="#7a4f2e"/>
+  
+  <!-- Stack of papers left -->
+  <rect x="60" y="70" width="120" height="55" rx="2" fill="#f5f5dc" transform="rotate(-2,120,97)"/>
+  <rect x="62" y="65" width="120" height="55" rx="2" fill="#fafad2" transform="rotate(1,122,92)"/>
+  <rect x="64" y="60" width="120" height="55" rx="2" fill="#f0f0d8" transform="rotate(0,124,87)"/>
+  <rect x="63" y="55" width="120" height="55" rx="2" fill="#f5f5dc" transform="rotate(-1,123,82)"/>
+  
+  <!-- Text on top paper -->
+  <line x1="75" y1="78" x2="155" y2="77" stroke="#aaa" stroke-width="1.5"/>
+  <line x1="75" y1="84" x2="150" y2="83" stroke="#aaa" stroke-width="1.5"/>
+  <line x1="75" y1="90" x2="145" y2="89" stroke="#aaa" stroke-width="1.5"/>
+  <rect x="75" y="96" width="50" height="15" rx="1" fill="#e8f0fe" stroke="#1a6bff" stroke-width="0.5"/>
+  <text x="100" y="108" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#1a6bff">可行性研究报告</text>
+  
+  <!-- Stack center -->
+  <rect x="240" y="85" width="140" height="50" rx="2" fill="#fafad2" transform="rotate(3,310,110)"/>
+  <rect x="238" y="80" width="140" height="50" rx="2" fill="#f5f5dc" transform="rotate(1,308,105)"/>
+  <rect x="242" y="75" width="140" height="50" rx="2" fill="#f0f0d8" transform="rotate(0,312,100)"/>
+  <rect x="240" y="70" width="140" height="50" rx="2" fill="#f5f5dc" transform="rotate(2,310,95)"/>
+  <rect x="238" y="65" width="140" height="50" rx="2" fill="#e8e8d0" transform="rotate(-1,308,90)"/>
+  
+  <!-- Text on center papers -->
+  <line x1="255" y1="88" x2="360" y2="89" stroke="#aaa" stroke-width="1.5"/>
+  <line x1="255" y1="94" x2="355" y2="95" stroke="#aaa" stroke-width="1.5"/>
+  <rect x="255" y="100" width="80" height="12" rx="1" fill="#fff3e0" stroke="#ff6b35" stroke-width="0.5"/>
+  <text x="295" y="110" text-anchor="middle" font-family="sans-serif" font-size="6" fill="#ff6b35">投资估算表</text>
+  
+  <!-- Open folder right -->
+  <rect x="460" y="90" width="150" height="55" rx="2" fill="#c9a96e" transform="rotate(-2,535,117)"/>
+  <rect x="462" y="85" width="150" height="55" rx="2" fill="#d4b87a" transform="rotate(1,537,112)"/>
+  <rect x="464" y="80" width="150" height="55" rx="2" fill="#f5f5dc" transform="rotate(0,539,107)"/>
+  
+  <!-- Pen -->
+  <line x1="420" y1="95" x2="445" y2="130" stroke="#333" stroke-width="2.5"/>
+  <line x1="420" y1="93" x2="422" y2="97" stroke="#333" stroke-width="3"/>
+  
+  <!-- Calculator -->
+  <rect x="90" y="165" width="80" height="50" rx="4" fill="#ddd" stroke="#bbb" stroke-width="1.5"/>
+  <rect x="95" y="170" width="70" height="12" rx="1" fill="#333"/>
+  <text x="130" y="180" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#0f0">8,400.00</text>
+  <rect x="95" y="185" width="15" height="10" rx="1" fill="#eee"/>  <rect x="113" y="185" width="15" height="10" rx="1" fill="#eee"/>
+  <rect x="131" y="185" width="15" height="10" rx="1" fill="#eee"/>  <rect x="149" y="185" width="15" height="10" rx="1" fill="#eee"/>
+  <rect x="95" y="198" width="15" height="10" rx="1" fill="#eee"/>  <rect x="113" y="198" width="15" height="10" rx="1" fill="#eee"/>
+  <rect x="131" y="198" width="15" height="10" rx="1" fill="#eee"/>  <rect x="149" y="198" width="15" height="10" rx="1" fill="#eee"/>
+  
+  <!-- Measured/annotations on papers -->
+  <!-- Red annotations -->
+  <line x1="270" y1="75" x2="290" y2="75" stroke="#e53935" stroke-width="1.5"/>
+  <line x1="275" y1="72" x2="275" y2="78" stroke="#e53935" stroke-width="1.5"/>
+  <line x1="290" y1="72" x2="290" y2="78" stroke="#e53935" stroke-width="1.5"/>
+  <text x="280" y="72" text-anchor="middle" font-family="sans-serif" font-size="6" fill="#e53935">注意 △</text>
+  
+  <!-- Post-it note -->
+  <rect x="440" y="160" width="60" height="55" rx="1" fill="#fff3cd" transform="rotate(10,470,187)"/>
+  <text x="470" y="178" text-anchor="middle" font-family="'Microsoft YaHei',sans-serif" font-size="8" fill="#e65100">今天必须</text>
+  <text x="470" y="190" text-anchor="middle" font-family="'Microsoft YaHei',sans-serif" font-size="8" fill="#e65100">完成核验</text>
+  <text x="470" y="205" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#e65100">!!!</text>
+  
+  <!-- Coffee mug -->
+  <rect x="590" y="160" width="30" height="28" rx="3" fill="#ddd" stroke="#bbb" stroke-width="1.5"/>
+  <path d="M620,168 Q628,168 628,176 Q628,183 620,183" fill="none" stroke="#bbb" stroke-width="2"/>
+  <ellipse cx="605" cy="160" rx="15" ry="3" fill="#5D4037"/>
+  
+  <!-- Glasses -->
+  <g transform="translate(500, 170)">
+    <circle cx="0" cy="0" r="12" fill="none" stroke="#888" stroke-width="2"/>
+    <circle cx="30" cy="0" r="12" fill="none" stroke="#888" stroke-width="2"/>
+    <line x1="12" y1="0" x2="18" y2="0" stroke="#888" stroke-width="2"/>
+  </g>
+  
+  <!-- Title overlay -->
+  <rect x="0" y="340" width="700" height="35" fill="#000" opacity="0.5"/>
+  <text x="350" y="362" text-anchor="middle" font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="14" fill="#fff">"十五年的经验，都在这张桌上了"</text>
+  
+  <text x="690" y="392" text-anchor="end" font-family="sans-serif" font-size="8" fill="#888" opacity="0.6">清源智界 · 獴探</text>
+</svg>
