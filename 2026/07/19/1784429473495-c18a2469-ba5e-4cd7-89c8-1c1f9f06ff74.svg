@@ -1,0 +1,227 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 390" role="img" aria-labelledby="title desc">
+  <title id="title">电磁重接炮单级工作过程</title>
+  <desc id="desc">一枚导电非磁性弹丸从同一对线圈之间向右运动。开始时弹丸中的涡流隔开上下磁通；随着弹丸移出间隙，磁力线在其后缘依次重新连接并推动弹丸；最后磁通完成重接，弹丸离开发射级。</desc>
+  <style>
+    :root {
+      --fg: #20242a;
+      --muted: #66707c;
+      --coil: #4f6578;
+      --coil-fill: #d8e0e7;
+      --field: #1677b8;
+      --projectile: #c96a22;
+      --projectile-fill: #f4d2b8;
+      --force: #a43b3b;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --fg: #edf1f5;
+        --muted: #b5bec8;
+        --coil: #bac8d5;
+        --coil-fill: #35414c;
+        --field: #6ec5f2;
+        --projectile: #f2a45f;
+        --projectile-fill: #563b29;
+        --force: #f08080;
+      }
+    }
+    text {
+      fill: var(--fg);
+      font: 500 20px system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    .small {
+      fill: var(--muted);
+      font-size: 16px;
+      font-weight: 400;
+    }
+    .coil {
+      fill: var(--coil-fill);
+      stroke: var(--coil);
+      stroke-width: 2;
+      vector-effect: non-scaling-stroke;
+    }
+    .coil-turn {
+      fill: none;
+      stroke: var(--coil);
+      stroke-width: 2;
+      vector-effect: non-scaling-stroke;
+    }
+    .pole {
+      fill: var(--coil);
+      font-size: 18px;
+    }
+    .projectile {
+      fill: var(--projectile-fill);
+      stroke: var(--projectile);
+      stroke-width: 2;
+      vector-effect: non-scaling-stroke;
+    }
+    .eddy-current {
+      fill: none;
+      stroke: var(--projectile);
+      stroke-width: 2;
+      stroke-dasharray: 6 5;
+      vector-effect: non-scaling-stroke;
+    }
+    .field-line {
+      fill: none;
+      stroke: var(--field);
+      stroke-width: 2;
+      vector-effect: non-scaling-stroke;
+    }
+    .blocked-field {
+      animation: blocked-field 9s linear infinite;
+    }
+    .reconnect-line {
+      opacity: 1;
+    }
+    .reconnection-window {
+      transform-origin: 110px 185px;
+      animation: reconnection-window 9s cubic-bezier(.3, .05, .35, 1) infinite;
+    }
+    .projectile-group {
+      animation: projectile-motion 9s cubic-bezier(.3, .05, .35, 1) infinite;
+    }
+    .projectile-current {
+      animation: current-flow 9s linear infinite;
+    }
+    .force {
+      opacity: 0;
+      animation: force-pulse 9s linear infinite;
+    }
+    .force-line {
+      fill: none;
+      stroke: var(--force);
+      stroke-width: 3;
+      vector-effect: non-scaling-stroke;
+    }
+    .force-label { fill: var(--force); }
+    .status {
+      opacity: 0;
+    }
+    .status-stored { animation: status-stored 9s linear infinite; }
+    .status-reconnecting { animation: status-reconnecting 9s linear infinite; }
+    .status-complete { animation: status-complete 9s linear infinite; }
+    .status-reduced { display: none; }
+    @keyframes projectile-motion {
+      0%, 22% { transform: translateX(0); }
+      80%, 100% { transform: translateX(360px); }
+    }
+    @keyframes reconnection-window {
+      0%, 22% { transform: scaleX(0); }
+      80%, 100% { transform: scaleX(1); }
+    }
+    @keyframes current-flow {
+      from { stroke-dashoffset: 0; }
+      to { stroke-dashoffset: -110; }
+    }
+    @keyframes blocked-field {
+      0%, 22% { opacity: 1; }
+      48% { opacity: .2; }
+      68%, 100% { opacity: 0; }
+    }
+    @keyframes force-pulse {
+      0%, 22% { opacity: 0; }
+      30%, 72% { opacity: 1; }
+      82%, 100% { opacity: 0; }
+    }
+    @keyframes status-stored {
+      0%, 20% { opacity: 1; }
+      25%, 100% { opacity: 0; }
+    }
+    @keyframes status-reconnecting {
+      0%, 20% { opacity: 0; }
+      27%, 76% { opacity: 1; }
+      82%, 100% { opacity: 0; }
+    }
+    @keyframes status-complete {
+      0%, 77% { opacity: 0; }
+      84%, 100% { opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .status { display: none; }
+      .status-reduced { display: inline; }
+      .blocked-field {
+        animation: none;
+        opacity: .25;
+      }
+      .reconnection-window {
+        animation: none;
+        transform: scaleX(.47);
+      }
+      .projectile-group {
+        animation: none;
+        transform: translateX(170px);
+      }
+      .projectile-current {
+        animation: none;
+      }
+      .force {
+        animation: none;
+        opacity: 1;
+      }
+    }
+  </style>
+
+  <defs>
+    <marker id="field-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--field)"/>
+    </marker>
+    <marker id="projectile-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--projectile)"/>
+    </marker>
+    <marker id="force-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--force)"/>
+    </marker>
+    <clipPath id="reconnected-region" clipPathUnits="userSpaceOnUse">
+      <rect class="reconnection-window" x="110" y="104" width="360" height="162"/>
+    </clipPath>
+  </defs>
+
+  <text class="status status-stored" x="26" y="32">储存磁能：弹丸中的涡流隔开上下磁通</text>
+  <text class="status status-reconnecting" x="26" y="32">后缘重接：磁场能转化为弹丸动能</text>
+  <text class="status status-complete" x="26" y="32">完成重接：弹丸离开本级</text>
+  <text class="status-reduced" x="26" y="32">弹丸移出间隙，磁力线在后缘重新连接并产生推力</text>
+
+  <rect class="coil" x="110" y="62" width="360" height="42" rx="7"/>
+  <path class="coil-turn" d="M 132 70 v26 m30-26 v26 m30-26 v26 m30-26 v26 m30-26 v26 m30-26 v26 m30-26 v26 m30-26 v26 m30-26 v26 m30-26 v26 m30-26 v26"/>
+  <rect class="coil" x="110" y="266" width="360" height="42" rx="7"/>
+  <path class="coil-turn" d="M 132 274 v26 m30-26 v26 m30-26 v26 m30-26 v26 m30-26 v26 m30-26 v26 m30-26 v26 m30-26 v26 m30-26 v26 m30-26 v26 m30-26 v26"/>
+  <text class="pole" x="84" y="96">S</text>
+  <text class="pole" x="84" y="300">N</text>
+  <text class="small" x="478" y="90">线圈</text>
+  <text class="small" x="478" y="294">线圈</text>
+
+  <g class="blocked-field">
+    <path class="field-line" d="M 140 106 C 132 130 135 151 154 169"/>
+    <path class="field-line" d="M 195 106 C 187 130 190 151 209 169"/>
+    <path class="field-line" d="M 250 106 C 242 130 245 151 264 169"/>
+    <path class="field-line" d="M 305 106 C 297 130 300 151 319 169"/>
+    <path class="field-line" d="M 140 264 C 132 240 135 219 154 211"/>
+    <path class="field-line" d="M 195 264 C 187 240 190 219 209 211"/>
+    <path class="field-line" d="M 250 264 C 242 240 245 219 264 211"/>
+    <path class="field-line" d="M 305 264 C 297 240 300 219 319 211"/>
+  </g>
+
+  <g clip-path="url(#reconnected-region)">
+    <path class="field-line reconnect-line" d="M 125 266 V 104" marker-end="url(#field-arrow)"/>
+    <path class="field-line reconnect-line" d="M 195 266 V 104" marker-end="url(#field-arrow)"/>
+    <path class="field-line reconnect-line" d="M 265 266 V 104" marker-end="url(#field-arrow)"/>
+    <path class="field-line reconnect-line" d="M 335 266 V 104" marker-end="url(#field-arrow)"/>
+    <path class="field-line reconnect-line" d="M 405 266 V 104" marker-end="url(#field-arrow)"/>
+  </g>
+
+  <g class="projectile-group">
+    <rect class="projectile" x="110" y="169" width="360" height="42" rx="5"/>
+    <text class="small" x="220" y="196">导电非磁性弹丸</text>
+    <path class="eddy-current projectile-current" d="M 145 178 H 435 M 435 202 H 145" marker-end="url(#projectile-arrow)"/>
+    <g class="force">
+      <path class="force-line" d="M 52 190 H 128" marker-end="url(#force-arrow)"/>
+      <text class="small force-label" x="50" y="163">电磁推力</text>
+    </g>
+  </g>
+
+  <path class="force-line" d="M 474 138 H 558" marker-end="url(#force-arrow)"/>
+  <text class="small force-label" x="474" y="129">运动方向</text>
+
+  <text class="small" x="26" y="370">蓝线：磁通　橙色：导电弹丸　红箭头：推力与运动</text>
+</svg>
