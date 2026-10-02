@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 726" width="760" height="726">
+<defs>
+  <style>
+    text { font-family: -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; }
+    .mono { font-family: 'SF Mono', Menlo, Consolas, monospace; }
+  </style>
+  <linearGradient id="gBlue" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1D4ED8"/><stop offset="100%" stop-color="#60A5FA"/></linearGradient>
+  <linearGradient id="gOrange" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#C2410C"/><stop offset="100%" stop-color="#FB923C"/></linearGradient>
+  <linearGradient id="gGreen" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#15803D"/><stop offset="100%" stop-color="#4ADE80"/></linearGradient>
+  <linearGradient id="gPurple" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#6D28D9"/><stop offset="100%" stop-color="#A78BFA"/></linearGradient>
+  <linearGradient id="gSlate" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#475569"/><stop offset="100%" stop-color="#94A3B8"/></linearGradient>
+  <linearGradient id="gTeal" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0F766E"/><stop offset="100%" stop-color="#2DD4BF"/></linearGradient>
+  <filter id="shadowSm"><feDropShadow dx="0" dy="1" stdDeviation="3" flood-color="#64748B" flood-opacity="0.12"/></filter>
+  <marker id="arr_gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#94A3B8"/></marker>
+  <marker id="arr_green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#22C55E"/></marker>
+  <marker id="arr_blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#3B82F6"/></marker>
+  <marker id="arr_orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#F97316"/></marker>
+  <marker id="arr_red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#EF4444"/></marker>
+</defs>
+<rect width="760" height="726" fill="#F8FAFC"/>
+<text x="380" y="48" font-size="26" font-weight="800" fill="#0F172A" text-anchor="middle">新会话,就是新 id 吗</text>
+<text x="380" y="76" font-size="14" font-weight="400" fill="#64748B" text-anchor="middle">新会话一定有新 id,但换 id 不一定是新会话</text>
+<rect x="40" y="100" width="270" height="40" rx="12" fill="url(#gSlate)" filter="url(#shadowSm)"/>
+<text x="175" y="126" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">发生了什么</text>
+<rect x="320" y="100" width="190" height="40" rx="12" fill="url(#gBlue)" filter="url(#shadowSm)"/>
+<text x="415" y="126" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">sessionKey</text>
+<rect x="520" y="100" width="200" height="40" rx="12" fill="url(#gOrange)" filter="url(#shadowSm)"/>
+<text x="620" y="126" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">sessionId</text>
+<rect x="40" y="152" width="680" height="96" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" filter="url(#shadowSm)"/>
+<text x="58" y="182" font-size="15" font-weight="700" fill="#0F172A" text-anchor="start">新来源的第一条消息</text>
+<text x="58" y="204" font-size="12.5" font-weight="400" fill="#64748B" text-anchor="start">或者控制台里新建 thread</text>
+<text x="58" y="230" font-size="12.5" font-weight="700" fill="#475569" text-anchor="start">会话还不存在,就新建一个</text>
+<rect x="340" y="176" width="150" height="48" rx="24" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.5"/>
+<text x="415" y="207" font-size="17" font-weight="800" fill="#9A3412" text-anchor="middle">新</text>
+<rect x="540" y="176" width="160" height="48" rx="24" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.5"/>
+<text x="620" y="207" font-size="17" font-weight="800" fill="#9A3412" text-anchor="middle">新</text>
+<rect x="40" y="260" width="680" height="96" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" filter="url(#shadowSm)"/>
+<text x="58" y="290" font-size="15" font-weight="700" fill="#0F172A" text-anchor="start">/new 或 /reset</text>
+<text x="58" y="312" font-size="12.5" font-weight="400" fill="#64748B" text-anchor="start">对一个已经存在的会话</text>
+<text x="58" y="338" font-size="12.5" font-weight="700" fill="#475569" text-anchor="start">只追加一条重置边界</text>
+<rect x="340" y="284" width="150" height="48" rx="24" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+<text x="415" y="315" font-size="17" font-weight="800" fill="#166534" text-anchor="middle">不变</text>
+<rect x="540" y="284" width="160" height="48" rx="24" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+<text x="620" y="315" font-size="17" font-weight="800" fill="#166534" text-anchor="middle">不变</text>
+<rect x="40" y="368" width="680" height="96" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" filter="url(#shadowSm)"/>
+<text x="58" y="398" font-size="15" font-weight="700" fill="#0F172A" text-anchor="start">ACP 会话上的 /reset</text>
+<text x="58" y="420" font-size="12.5" font-weight="400" fill="#64748B" text-anchor="start">外部编码工具那一类会话</text>
+<text x="58" y="446" font-size="12.5" font-weight="700" fill="#475569" text-anchor="start">ACP 重置会换本地 id</text>
+<rect x="340" y="392" width="150" height="48" rx="24" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+<text x="415" y="423" font-size="17" font-weight="800" fill="#166534" text-anchor="middle">不变</text>
+<rect x="540" y="392" width="160" height="48" rx="24" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.5"/>
+<text x="620" y="423" font-size="17" font-weight="800" fill="#9A3412" text-anchor="middle">新</text>
+<rect x="40" y="476" width="680" height="96" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" filter="url(#shadowSm)"/>
+<text x="58" y="506" font-size="15" font-weight="700" fill="#0F172A" text-anchor="start">分叉 fork</text>
+<text x="58" y="528" font-size="12.5" font-weight="400" fill="#64748B" text-anchor="start">从某条消息或当前状态分出去</text>
+<text x="58" y="554" font-size="12.5" font-weight="700" fill="#475569" text-anchor="start">分出一个子会话,父会话不变</text>
+<rect x="340" y="500" width="150" height="48" rx="24" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.5"/>
+<text x="415" y="531" font-size="17" font-weight="800" fill="#9A3412" text-anchor="middle">新</text>
+<rect x="540" y="500" width="160" height="48" rx="24" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.5"/>
+<text x="620" y="531" font-size="17" font-weight="800" fill="#9A3412" text-anchor="middle">新</text>
+<rect x="40" y="592" width="680" height="110" rx="12" fill="#0F172A" stroke="#0F172A" stroke-width="1" filter="url(#shadowSm)"/>
+<text x="64" y="622" font-size="14" font-weight="700" fill="#FBBF24" text-anchor="start">记住这条</text>
+<text x="64" y="650" font-size="13" font-weight="400" fill="#E2E8F0" text-anchor="start">key 换了,id 一定是新的;key 没换,id 也可能换(ACP 重置)。</text>
+<text x="64" y="672" font-size="13" font-weight="400" fill="#E2E8F0" text-anchor="start">最常用的 /reset 两个都不换,所以重置前的话还在。</text>
+</svg>
