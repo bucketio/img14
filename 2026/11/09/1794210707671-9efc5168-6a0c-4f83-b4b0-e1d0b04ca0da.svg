@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="750" height="1660" viewBox="0 0 750 1660" role="img" aria-labelledby="cp-title cp-desc">
+<title id="cp-title">Chunked Prefill：让长输入不再独占一个大调度单元</title>
+<desc id="cp-desc">16 秒过程示意。A 与 B 正在生成，C 带来 12 个输入 token。上方把 C 整段放进一轮，A 与 B 等待，随后才各输出一个新 token。下方分三轮，每轮 A 与 B 各输出一个，同时处理 C 的四个输入 token。上下画面的播放时间不代表相同实际耗时；三个请求的上下文独立。禁用动画时显示完整对照概览。</desc>
+<g font-family="PingFang SC, Microsoft YaHei, sans-serif">
+<rect x="0" y="0" width="750" height="1660" rx="0" fill="#FFF9EF" stroke="none" stroke-width="2"/>
+<text x="375" y="64" font-size="42" fill="#18354A" font-weight="700" text-anchor="middle">长输入来了，谁先用 GPU？</text>
+<text x="375" y="112" font-size="31" fill="#60717A" font-weight="400" text-anchor="middle">整段 Prefill vs. Chunked Prefill</text>
+<rect x="28" y="138" width="694" height="48" rx="12" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<text x="375" y="171" font-size="30" fill="#18354A" font-weight="500" text-anchor="middle">A、B 已在生成；C 新来 12 个输入 token</text>
+<rect x="28" y="208" width="694" height="534" rx="22" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<text x="54" y="263" font-size="37" fill="#18354A" font-weight="700" text-anchor="start">整段处理 C 的长输入</text>
+<g opacity="0" data-phase="0" data-component="upper"><animate attributeName="opacity" values="1;0;0;0;1" keyTimes="0;0.25;0.5;0.75;1" calcMode="discrete" dur="16s" begin="0s" repeatCount="indefinite"/>
+<rect x="52" y="284" width="646" height="60" rx="11" fill="#EDF0EC" stroke="none" stroke-width="2"/>
+<text x="74" y="325" font-size="32" fill="#60717A" font-weight="700" text-anchor="start">C 到达，等待调度</text>
+<text x="250" y="405" font-size="31" fill="#60717A" font-weight="400" text-anchor="start">等待下一次调度</text>
+<text x="250" y="473" font-size="31" fill="#60717A" font-weight="400" text-anchor="start">等待下一次调度</text>
+<rect x="52" y="540" width="646" height="77" rx="12" fill="#EDF0EC" stroke="#D9E2DF" stroke-width="3"/>
+<rect x="66" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="117" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="168" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="219" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="270" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="321" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="372" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="423" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="474" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="525" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="576" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="627" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<text x="375" y="673" font-size="31" fill="#60717A" font-weight="500" text-anchor="middle">C 的输入尚未处理</text>
+</g>
+<g opacity="0" data-phase="1" data-component="upper"><animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0;0.25;0.5;0.75;1" calcMode="discrete" dur="16s" begin="0s" repeatCount="indefinite"/>
+<rect x="52" y="284" width="646" height="60" rx="11" fill="#FFF0DC" stroke="none" stroke-width="2"/>
+<text x="74" y="325" font-size="32" fill="#E28D3C" font-weight="700" text-anchor="start">第 1 轮：整段 C 仍在计算</text>
+<text x="250" y="405" font-size="31" fill="#60717A" font-weight="400" text-anchor="start">等待下一次调度</text>
+<text x="250" y="473" font-size="31" fill="#60717A" font-weight="400" text-anchor="start">等待下一次调度</text>
+<rect x="52" y="540" width="646" height="77" rx="12" fill="#FFF0DC" stroke="#E28D3C" stroke-width="3"/>
+<rect x="66" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#E28D3C" stroke-width="2"/>
+<rect x="117" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#E28D3C" stroke-width="2"/>
+<rect x="168" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#E28D3C" stroke-width="2"/>
+<rect x="219" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#E28D3C" stroke-width="2"/>
+<rect x="270" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#E28D3C" stroke-width="2"/>
+<rect x="321" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#E28D3C" stroke-width="2"/>
+<rect x="372" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#E28D3C" stroke-width="2"/>
+<rect x="423" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#E28D3C" stroke-width="2"/>
+<rect x="474" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#E28D3C" stroke-width="2"/>
+<rect x="525" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#E28D3C" stroke-width="2"/>
+<rect x="576" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#E28D3C" stroke-width="2"/>
+<rect x="627" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#E28D3C" stroke-width="2"/>
+<g opacity="0.4"><animate attributeName="opacity" values="0.3;0.3;0.9;0.3;0.9;0.3;0.9;0.3;0.3" keyTimes="0;0.25;0.33;0.41;0.49;0.57;0.65;0.75;1" dur="16s" begin="0s" repeatCount="indefinite"/>
+<rect x="52" y="540" width="646" height="77" rx="12" fill="none" stroke="#E28D3C" stroke-width="6"/>
+</g>
+<text x="375" y="673" font-size="31" fill="#18354A" font-weight="500" text-anchor="middle">一个大块，中途不插入 A、B</text>
+</g>
+<g opacity="0" data-phase="2" data-component="upper"><animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.25;0.5;0.75;1" calcMode="discrete" dur="16s" begin="0s" repeatCount="indefinite"/>
+<rect x="52" y="284" width="646" height="60" rx="11" fill="#FFF0DC" stroke="none" stroke-width="2"/>
+<text x="74" y="325" font-size="32" fill="#E28D3C" font-weight="700" text-anchor="start">第 1 轮：整段 C 仍在计算</text>
+<text x="250" y="405" font-size="31" fill="#60717A" font-weight="400" text-anchor="start">等待下一次调度</text>
+<text x="250" y="473" font-size="31" fill="#60717A" font-weight="400" text-anchor="start">等待下一次调度</text>
+<rect x="52" y="540" width="646" height="77" rx="12" fill="#FFF0DC" stroke="#E28D3C" stroke-width="3"/>
+<rect x="66" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#E28D3C" stroke-width="2"/>
+<rect x="117" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#E28D3C" stroke-width="2"/>
+<rect x="168" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#E28D3C" stroke-width="2"/>
+<rect x="219" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#E28D3C" stroke-width="2"/>
+<rect x="270" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#E28D3C" stroke-width="2"/>
+<rect x="321" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#E28D3C" stroke-width="2"/>
+<rect x="372" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#E28D3C" stroke-width="2"/>
+<rect x="423" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#E28D3C" stroke-width="2"/>
+<rect x="474" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#E28D3C" stroke-width="2"/>
+<rect x="525" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#E28D3C" stroke-width="2"/>
+<rect x="576" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#E28D3C" stroke-width="2"/>
+<rect x="627" y="557" width="43" height="43" rx="6" fill="#FFFFFF" stroke="#E28D3C" stroke-width="2"/>
+<g opacity="0.4"><animate attributeName="opacity" values="0.3;0.3;0.9;0.3;0.9;0.3;0.9;0.3;0.3" keyTimes="0;0.25;0.33;0.41;0.49;0.57;0.65;0.75;1" dur="16s" begin="0s" repeatCount="indefinite"/>
+<rect x="52" y="540" width="646" height="77" rx="12" fill="none" stroke="#E28D3C" stroke-width="6"/>
+</g>
+<text x="375" y="673" font-size="31" fill="#18354A" font-weight="500" text-anchor="middle">一个大块，中途不插入 A、B</text>
+</g>
+<g opacity="1" data-phase="3" data-component="upper"><animate attributeName="opacity" values="0;0;0;1;0" keyTimes="0;0.25;0.5;0.75;1" calcMode="discrete" dur="16s" begin="0s" repeatCount="indefinite"/>
+<rect x="52" y="284" width="646" height="60" rx="11" fill="#DEF1EC" stroke="none" stroke-width="2"/>
+<text x="74" y="325" font-size="32" fill="#168A88" font-weight="700" text-anchor="start">第 2 轮：才轮到 A、B 继续输出</text>
+<rect x="246" y="366" width="54" height="54" rx="9" fill="#DEF1EC" stroke="#168A88" stroke-width="2"/>
+<text x="273" y="403" font-size="29" fill="#168A88" font-weight="700" text-anchor="middle">新</text>
+<text x="665" y="404" font-size="32" fill="#168A88" font-weight="700" text-anchor="end">+1</text>
+<rect x="246" y="434" width="54" height="54" rx="9" fill="#DEF1EC" stroke="#168A88" stroke-width="2"/>
+<text x="273" y="471" font-size="29" fill="#168A88" font-weight="700" text-anchor="middle">新</text>
+<text x="665" y="472" font-size="32" fill="#168A88" font-weight="700" text-anchor="end">+1</text>
+<rect x="52" y="540" width="646" height="77" rx="12" fill="#DEF1EC" stroke="#168A88" stroke-width="3"/>
+<rect x="66" y="557" width="43" height="43" rx="6" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="117" y="557" width="43" height="43" rx="6" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="168" y="557" width="43" height="43" rx="6" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="219" y="557" width="43" height="43" rx="6" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="270" y="557" width="43" height="43" rx="6" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="321" y="557" width="43" height="43" rx="6" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="372" y="557" width="43" height="43" rx="6" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="423" y="557" width="43" height="43" rx="6" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="474" y="557" width="43" height="43" rx="6" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="525" y="557" width="43" height="43" rx="6" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="576" y="557" width="43" height="43" rx="6" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="627" y="557" width="43" height="43" rx="6" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<text x="375" y="673" font-size="31" fill="#18354A" font-weight="500" text-anchor="middle">C 已读完；A、B 各新增 1 个 token</text>
+</g>
+<text x="54" y="405" font-size="33" fill="#18354A" font-weight="500" text-anchor="start">A 的输出</text>
+<text x="54" y="473" font-size="33" fill="#18354A" font-weight="500" text-anchor="start">B 的输出</text>
+<text x="54" y="519" font-size="31" fill="#18354A" font-weight="500" text-anchor="start">C：12 个输入 token，整段一轮</text>
+<text x="375" y="715" font-size="29" fill="#60717A" font-weight="400" text-anchor="middle">先处理完长输入，再给后续输出机会</text>
+<rect x="28" y="768" width="694" height="655" rx="22" fill="#FFFFFF" stroke="#168A88" stroke-width="2.5"/>
+<text x="54" y="822" font-size="37" fill="#18354A" font-weight="700" text-anchor="start">分块处理 C 的长输入</text>
+<g opacity="0" data-phase="0" data-component="lower"><animate attributeName="opacity" values="1;0;0;0;1" keyTimes="0;0.25;0.5;0.75;1" calcMode="discrete" dur="16s" begin="0s" repeatCount="indefinite"/>
+<rect x="52" y="844" width="646" height="62" rx="11" fill="#EDF0EC" stroke="none" stroke-width="2"/>
+<text x="74" y="886" font-size="30" fill="#60717A" font-weight="700" text-anchor="start">C 到达，先把长输入分成小块</text>
+<text x="250" y="978" font-size="31" fill="#60717A" font-weight="400" text-anchor="start">等待下一次调度</text>
+<text x="250" y="1046" font-size="31" fill="#60717A" font-weight="400" text-anchor="start">等待下一次调度</text>
+<rect x="52" y="1130" width="200" height="122" rx="12" fill="#EDF0EC" stroke="#D9E2DF" stroke-width="3"/>
+<text x="152" y="1172" font-size="30" fill="#60717A" font-weight="700" text-anchor="middle">C 1–4</text>
+<rect x="75" y="1193" width="32" height="34" rx="5" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="116" y="1193" width="32" height="34" rx="5" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="157" y="1193" width="32" height="34" rx="5" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="198" y="1193" width="32" height="34" rx="5" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="275" y="1130" width="200" height="122" rx="12" fill="#EDF0EC" stroke="#D9E2DF" stroke-width="3"/>
+<text x="375" y="1172" font-size="30" fill="#60717A" font-weight="700" text-anchor="middle">C 5–8</text>
+<rect x="298" y="1193" width="32" height="34" rx="5" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="339" y="1193" width="32" height="34" rx="5" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="380" y="1193" width="32" height="34" rx="5" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="421" y="1193" width="32" height="34" rx="5" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="498" y="1130" width="200" height="122" rx="12" fill="#EDF0EC" stroke="#D9E2DF" stroke-width="3"/>
+<text x="598" y="1172" font-size="30" fill="#60717A" font-weight="700" text-anchor="middle">C 9–12</text>
+<rect x="521" y="1193" width="32" height="34" rx="5" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="562" y="1193" width="32" height="34" rx="5" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="603" y="1193" width="32" height="34" rx="5" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="644" y="1193" width="32" height="34" rx="5" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<text x="375" y="1309" font-size="30" fill="#18354A" font-weight="500" text-anchor="middle">C 的输入尚未处理</text>
+</g>
+<g opacity="0" data-phase="1" data-component="lower"><animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0;0.25;0.5;0.75;1" calcMode="discrete" dur="16s" begin="0s" repeatCount="indefinite"/>
+<rect x="52" y="844" width="646" height="62" rx="11" fill="#DEF1EC" stroke="none" stroke-width="2"/>
+<text x="74" y="886" font-size="30" fill="#168A88" font-weight="700" text-anchor="start">第 1 轮：A 1 个 + B 1 个 + C 4 个</text>
+<rect x="246" y="939" width="54" height="54" rx="9" fill="#DEF1EC" stroke="#168A88" stroke-width="2"/>
+<text x="273" y="976" font-size="29" fill="#168A88" font-weight="700" text-anchor="middle">新</text>
+<text x="665" y="977" font-size="32" fill="#168A88" font-weight="700" text-anchor="end">+1</text>
+<rect x="246" y="1007" width="54" height="54" rx="9" fill="#DEF1EC" stroke="#168A88" stroke-width="2"/>
+<text x="273" y="1044" font-size="29" fill="#168A88" font-weight="700" text-anchor="middle">新</text>
+<text x="665" y="1045" font-size="32" fill="#168A88" font-weight="700" text-anchor="end">+1</text>
+<rect x="52" y="1130" width="200" height="122" rx="12" fill="#DEF1EC" stroke="#168A88" stroke-width="3"/>
+<text x="152" y="1172" font-size="30" fill="#168A88" font-weight="700" text-anchor="middle">C 1–4</text>
+<rect x="75" y="1193" width="32" height="34" rx="5" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="116" y="1193" width="32" height="34" rx="5" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="157" y="1193" width="32" height="34" rx="5" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="198" y="1193" width="32" height="34" rx="5" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="49" y="1127" width="206" height="128" rx="14" fill="none" stroke="#168A88" stroke-width="3"/>
+<rect x="275" y="1130" width="200" height="122" rx="12" fill="#EDF0EC" stroke="#D9E2DF" stroke-width="3"/>
+<text x="375" y="1172" font-size="30" fill="#60717A" font-weight="700" text-anchor="middle">C 5–8</text>
+<rect x="298" y="1193" width="32" height="34" rx="5" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="339" y="1193" width="32" height="34" rx="5" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="380" y="1193" width="32" height="34" rx="5" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="421" y="1193" width="32" height="34" rx="5" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="498" y="1130" width="200" height="122" rx="12" fill="#EDF0EC" stroke="#D9E2DF" stroke-width="3"/>
+<text x="598" y="1172" font-size="30" fill="#60717A" font-weight="700" text-anchor="middle">C 9–12</text>
+<rect x="521" y="1193" width="32" height="34" rx="5" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="562" y="1193" width="32" height="34" rx="5" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="603" y="1193" width="32" height="34" rx="5" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="644" y="1193" width="32" height="34" rx="5" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<text x="375" y="1309" font-size="30" fill="#18354A" font-weight="500" text-anchor="middle">C 读到第 4 个；A、B 各新增 1 个</text>
+</g>
+<g opacity="0" data-phase="2" data-component="lower"><animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.25;0.5;0.75;1" calcMode="discrete" dur="16s" begin="0s" repeatCount="indefinite"/>
+<rect x="52" y="844" width="646" height="62" rx="11" fill="#DEF1EC" stroke="none" stroke-width="2"/>
+<text x="74" y="886" font-size="30" fill="#168A88" font-weight="700" text-anchor="start">第 2 轮：A 1 个 + B 1 个 + C 4 个</text>
+<rect x="246" y="939" width="54" height="54" rx="9" fill="#DEF1EC" stroke="#168A88" stroke-width="2"/>
+<text x="273" y="976" font-size="29" fill="#168A88" font-weight="700" text-anchor="middle">新</text>
+<rect x="312" y="939" width="54" height="54" rx="9" fill="#DEF1EC" stroke="#168A88" stroke-width="2"/>
+<text x="339" y="976" font-size="29" fill="#168A88" font-weight="700" text-anchor="middle">新</text>
+<text x="665" y="977" font-size="32" fill="#168A88" font-weight="700" text-anchor="end">+2</text>
+<rect x="246" y="1007" width="54" height="54" rx="9" fill="#DEF1EC" stroke="#168A88" stroke-width="2"/>
+<text x="273" y="1044" font-size="29" fill="#168A88" font-weight="700" text-anchor="middle">新</text>
+<rect x="312" y="1007" width="54" height="54" rx="9" fill="#DEF1EC" stroke="#168A88" stroke-width="2"/>
+<text x="339" y="1044" font-size="29" fill="#168A88" font-weight="700" text-anchor="middle">新</text>
+<text x="665" y="1045" font-size="32" fill="#168A88" font-weight="700" text-anchor="end">+2</text>
+<rect x="52" y="1130" width="200" height="122" rx="12" fill="#DEF1EC" stroke="#168A88" stroke-width="3"/>
+<text x="152" y="1172" font-size="30" fill="#168A88" font-weight="700" text-anchor="middle">C 1–4</text>
+<rect x="75" y="1193" width="32" height="34" rx="5" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="116" y="1193" width="32" height="34" rx="5" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="157" y="1193" width="32" height="34" rx="5" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="198" y="1193" width="32" height="34" rx="5" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="275" y="1130" width="200" height="122" rx="12" fill="#DEF1EC" stroke="#168A88" stroke-width="3"/>
+<text x="375" y="1172" font-size="30" fill="#168A88" font-weight="700" text-anchor="middle">C 5–8</text>
+<rect x="298" y="1193" width="32" height="34" rx="5" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="339" y="1193" width="32" height="34" rx="5" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="380" y="1193" width="32" height="34" rx="5" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="421" y="1193" width="32" height="34" rx="5" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="272" y="1127" width="206" height="128" rx="14" fill="none" stroke="#168A88" stroke-width="3"/>
+<rect x="498" y="1130" width="200" height="122" rx="12" fill="#EDF0EC" stroke="#D9E2DF" stroke-width="3"/>
+<text x="598" y="1172" font-size="30" fill="#60717A" font-weight="700" text-anchor="middle">C 9–12</text>
+<rect x="521" y="1193" width="32" height="34" rx="5" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="562" y="1193" width="32" height="34" rx="5" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="603" y="1193" width="32" height="34" rx="5" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<rect x="644" y="1193" width="32" height="34" rx="5" fill="#FFFFFF" stroke="#D9E2DF" stroke-width="2"/>
+<text x="375" y="1309" font-size="30" fill="#18354A" font-weight="500" text-anchor="middle">C 读到第 8 个；A、B 各新增 2 个</text>
+</g>
+<g opacity="1" data-phase="3" data-component="lower"><animate attributeName="opacity" values="0;0;0;1;0" keyTimes="0;0.25;0.5;0.75;1" calcMode="discrete" dur="16s" begin="0s" repeatCount="indefinite"/>
+<rect x="52" y="844" width="646" height="62" rx="11" fill="#DEF1EC" stroke="none" stroke-width="2"/>
+<text x="74" y="886" font-size="30" fill="#168A88" font-weight="700" text-anchor="start">第 3 轮：A 1 个 + B 1 个 + C 4 个</text>
+<rect x="246" y="939" width="54" height="54" rx="9" fill="#DEF1EC" stroke="#168A88" stroke-width="2"/>
+<text x="273" y="976" font-size="29" fill="#168A88" font-weight="700" text-anchor="middle">新</text>
+<rect x="312" y="939" width="54" height="54" rx="9" fill="#DEF1EC" stroke="#168A88" stroke-width="2"/>
+<text x="339" y="976" font-size="29" fill="#168A88" font-weight="700" text-anchor="middle">新</text>
+<rect x="378" y="939" width="54" height="54" rx="9" fill="#DEF1EC" stroke="#168A88" stroke-width="2"/>
+<text x="405" y="976" font-size="29" fill="#168A88" font-weight="700" text-anchor="middle">新</text>
+<text x="665" y="977" font-size="32" fill="#168A88" font-weight="700" text-anchor="end">+3</text>
+<rect x="246" y="1007" width="54" height="54" rx="9" fill="#DEF1EC" stroke="#168A88" stroke-width="2"/>
+<text x="273" y="1044" font-size="29" fill="#168A88" font-weight="700" text-anchor="middle">新</text>
+<rect x="312" y="1007" width="54" height="54" rx="9" fill="#DEF1EC" stroke="#168A88" stroke-width="2"/>
+<text x="339" y="1044" font-size="29" fill="#168A88" font-weight="700" text-anchor="middle">新</text>
+<rect x="378" y="1007" width="54" height="54" rx="9" fill="#DEF1EC" stroke="#168A88" stroke-width="2"/>
+<text x="405" y="1044" font-size="29" fill="#168A88" font-weight="700" text-anchor="middle">新</text>
+<text x="665" y="1045" font-size="32" fill="#168A88" font-weight="700" text-anchor="end">+3</text>
+<rect x="52" y="1130" width="200" height="122" rx="12" fill="#DEF1EC" stroke="#168A88" stroke-width="3"/>
+<text x="152" y="1172" font-size="30" fill="#168A88" font-weight="700" text-anchor="middle">C 1–4</text>
+<rect x="75" y="1193" width="32" height="34" rx="5" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="116" y="1193" width="32" height="34" rx="5" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="157" y="1193" width="32" height="34" rx="5" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="198" y="1193" width="32" height="34" rx="5" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="275" y="1130" width="200" height="122" rx="12" fill="#DEF1EC" stroke="#168A88" stroke-width="3"/>
+<text x="375" y="1172" font-size="30" fill="#168A88" font-weight="700" text-anchor="middle">C 5–8</text>
+<rect x="298" y="1193" width="32" height="34" rx="5" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="339" y="1193" width="32" height="34" rx="5" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="380" y="1193" width="32" height="34" rx="5" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="421" y="1193" width="32" height="34" rx="5" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="498" y="1130" width="200" height="122" rx="12" fill="#DEF1EC" stroke="#168A88" stroke-width="3"/>
+<text x="598" y="1172" font-size="30" fill="#168A88" font-weight="700" text-anchor="middle">C 9–12</text>
+<rect x="521" y="1193" width="32" height="34" rx="5" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="562" y="1193" width="32" height="34" rx="5" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="603" y="1193" width="32" height="34" rx="5" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="644" y="1193" width="32" height="34" rx="5" fill="#168A88" stroke="#168A88" stroke-width="2"/>
+<rect x="495" y="1127" width="206" height="128" rx="14" fill="none" stroke="#168A88" stroke-width="3"/>
+<text x="375" y="1309" font-size="30" fill="#18354A" font-weight="500" text-anchor="middle">C 已读完；A、B 各新增 3 个</text>
+</g>
+<text x="54" y="978" font-size="33" fill="#18354A" font-weight="500" text-anchor="start">A 的输出</text>
+<text x="54" y="1046" font-size="33" fill="#18354A" font-weight="500" text-anchor="start">B 的输出</text>
+<text x="54" y="1106" font-size="31" fill="#18354A" font-weight="500" text-anchor="start">C：每轮处理后续 4 个输入 token</text>
+<text x="375" y="1362" font-size="31" fill="#168A88" font-weight="700" text-anchor="middle">每一小块之后，都能重新安排下一轮</text>
+<text x="375" y="1401" font-size="28" fill="#60717A" font-weight="400" text-anchor="middle">A、B、C 的上下文始终各自独立</text>
+<text x="375" y="1485" font-size="31" fill="#18354A" font-weight="700" text-anchor="middle">变化在调度：长输入还在读，别人也能接着输出</text>
+<text x="375" y="1536" font-size="29" fill="#60717A" font-weight="400" text-anchor="middle">上下是不同调度方案，播放节奏不是时间比例。</text>
+<text x="375" y="1580" font-size="28" fill="#60717A" font-weight="400" text-anchor="middle">格子数仅用于讲解，不代表实测耗时或性能倍数。</text>
+<text x="375" y="1630" font-size="27" fill="#60717A" font-weight="400" text-anchor="middle">智能知多少 · 过程示意</text>
+</g>
+</svg>
