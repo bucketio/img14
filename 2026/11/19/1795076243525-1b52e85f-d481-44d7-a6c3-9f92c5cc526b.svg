@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 1660" role="img" aria-labelledby="opd_loop_title opd_loop_desc" font-family="PingFang SC,Microsoft YaHei,sans-serif" fill="#17384A">
+<title id="opd_loop_title">同策略蒸馏：学生先生成，老师沿学生前缀反馈概率，再更新学生并重新采样</title>
+<desc id="opd_loop_desc">TML 的采样 token 实现示意，不代表所有同策略蒸馏的目标函数。学生使用当前策略生成轨迹。老师在每个学生前缀下计算已采样 token 的概率；可一次前向并行处理整条轨迹，各位置因果地只看题目与此前 token。师生概率之比提供反馈方向，不等同于逐步正确性标签。更新学生后重新生成轨迹。</desc>
+<defs><marker id="opd_loop_arrow_teal" markerWidth="15" markerHeight="15" refX="12" refY="7.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M2 2 L12 7.5 L2 13" fill="none" stroke="#087F77" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<defs><marker id="opd_loop_arrow_orange" markerWidth="15" markerHeight="15" refX="12" refY="7.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M2 2 L12 7.5 L2 13" fill="none" stroke="#B76520" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<defs><marker id="opd_loop_arrow_muted" markerWidth="15" markerHeight="15" refX="12" refY="7.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M2 2 L12 7.5 L2 13" fill="none" stroke="#607780" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<defs><marker id="opd_loop_arrow_blue" markerWidth="15" markerHeight="15" refX="12" refY="7.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M2 2 L12 7.5 L2 13" fill="none" stroke="#3366A6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect x="0" y="0" width="750" height="1660" rx="0" fill="#F7F9F8"/>
+<text x="32" y="69" font-size="41" font-weight="750" text-anchor="start">学生先作答，老师沿路反馈</text>
+<text x="32" y="121" font-size="31" font-weight="400" text-anchor="start" fill="#607780">TML 采样 token 版：沿学生实际轨迹学习</text>
+<rect x="25" y="174" width="668" height="252" rx="23" fill="#FFFFFF" stroke="#D9E3E4" stroke-width="2"/>
+<g id="opd_loop_state_0" opacity="0">
+<animate attributeName="opacity" values="1;0;0;0;1" keyTimes="0;0.25;0.5;0.75;1" calcMode="discrete" dur="20s" begin="0s" repeatCount="indefinite"/>
+<rect x="26.5" y="175.5" width="665" height="249" rx="22" fill="#EAF0FA" stroke="#3366A6" stroke-width="3"/>
+</g>
+<rect x="25" y="496" width="668" height="381" rx="23" fill="#FFFFFF" stroke="#D9E3E4" stroke-width="2"/>
+<g id="opd_loop_state_1" opacity="0">
+<animate attributeName="opacity" values="0;1;0;0;0" keyTimes="0;0.25;0.5;0.75;1" calcMode="discrete" dur="20s" begin="0s" repeatCount="indefinite"/>
+<rect x="26.5" y="497.5" width="665" height="378" rx="22" fill="#FFF0DC" stroke="#B76520" stroke-width="3"/>
+</g>
+<rect x="25" y="947" width="668" height="278" rx="23" fill="#FFFFFF" stroke="#D9E3E4" stroke-width="2"/>
+<g id="opd_loop_state_2" opacity="0">
+<animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.25;0.5;0.75;1" calcMode="discrete" dur="20s" begin="0s" repeatCount="indefinite"/>
+<rect x="26.5" y="948.5" width="665" height="275" rx="22" fill="#E2F3EF" stroke="#087F77" stroke-width="3"/>
+</g>
+<rect x="25" y="1295" width="668" height="184" rx="23" fill="#FFFFFF" stroke="#D9E3E4" stroke-width="2"/>
+<g id="opd_loop_state_3" opacity="0">
+<animate attributeName="opacity" values="0;0;0;1;0" keyTimes="0;0.25;0.5;0.75;1" calcMode="discrete" dur="20s" begin="0s" repeatCount="indefinite"/>
+<rect x="26.5" y="1296.5" width="665" height="181" rx="22" fill="#EAF0FA" stroke="#3366A6" stroke-width="3"/>
+</g>
+<text x="47" y="224" font-size="36" font-weight="750" text-anchor="start" fill="#3366A6">① 学生用当前策略生成回答</text>
+<rect x="47" y="251" width="621" height="59" rx="13" fill="#EAF0FA"/>
+<text x="357.5" y="291" font-size="32" font-weight="650" text-anchor="middle" fill="#3366A6">题目 x → 学生自己的回答轨迹</text>
+<rect x="90" y="339" width="151" height="58" rx="14" fill="#EAF0FA" stroke="#3366A6" stroke-width="2"/>
+<text x="165.5" y="379" font-size="37" font-weight="750" text-anchor="middle" fill="#3366A6">y₁</text>
+<line x1="249" y1="368" x2="271" y2="368" stroke="#3366A6" stroke-width="3" stroke-linecap="round" marker-end="url(#opd_loop_arrow_blue)"/>
+<rect x="281" y="339" width="151" height="58" rx="14" fill="#EAF0FA" stroke="#3366A6" stroke-width="2"/>
+<text x="356.5" y="379" font-size="37" font-weight="750" text-anchor="middle" fill="#3366A6">y₂</text>
+<line x1="440" y1="368" x2="462" y2="368" stroke="#3366A6" stroke-width="3" stroke-linecap="round" marker-end="url(#opd_loop_arrow_blue)"/>
+<rect x="472" y="339" width="151" height="58" rx="14" fill="#EAF0FA" stroke="#3366A6" stroke-width="2"/>
+<text x="547.5" y="379" font-size="37" font-weight="750" text-anchor="middle" fill="#3366A6">y₃</text>
+<text x="47" y="548" font-size="36" font-weight="750" text-anchor="start" fill="#B76520">② 老师沿学生前缀计算概率</text>
+<text x="47" y="597" font-size="31" font-weight="550" text-anchor="start" fill="#607780">一次前向可并行处理这些位置</text>
+<rect x="47" y="628" width="286" height="55" rx="12" fill="#FFF0DC"/>
+<text x="190" y="666" font-size="33" font-weight="650" text-anchor="middle" fill="#B76520">题目 x</text>
+<line x1="345" y1="655.5" x2="385" y2="655.5" stroke="#B76520" stroke-width="3" stroke-linecap="round" marker-end="url(#opd_loop_arrow_orange)"/>
+<text x="417" y="666" font-size="34" font-weight="700" text-anchor="start" fill="#B76520">P老师(y₁)</text>
+<rect x="47" y="697" width="286" height="55" rx="12" fill="#FFF0DC"/>
+<text x="190" y="735" font-size="33" font-weight="650" text-anchor="middle" fill="#B76520">x, y₁</text>
+<line x1="345" y1="724.5" x2="385" y2="724.5" stroke="#B76520" stroke-width="3" stroke-linecap="round" marker-end="url(#opd_loop_arrow_orange)"/>
+<text x="417" y="735" font-size="34" font-weight="700" text-anchor="start" fill="#B76520">P老师(y₂)</text>
+<rect x="47" y="766" width="286" height="55" rx="12" fill="#FFF0DC"/>
+<text x="190" y="804" font-size="33" font-weight="650" text-anchor="middle" fill="#B76520">x, y₁, y₂</text>
+<line x1="345" y1="793.5" x2="385" y2="793.5" stroke="#B76520" stroke-width="3" stroke-linecap="round" marker-end="url(#opd_loop_arrow_orange)"/>
+<text x="417" y="804" font-size="34" font-weight="700" text-anchor="start" fill="#B76520">P老师(y₃)</text>
+<text x="47" y="857" font-size="29" font-weight="600" text-anchor="start" fill="#607780">每个位置只看题目与它之前的 token</text>
+<text x="47" y="999" font-size="34" font-weight="750" text-anchor="start" fill="#087F77">③ 比对同一已采样 token 的概率</text>
+<text x="47" y="1048" font-size="31" font-weight="550" text-anchor="start" fill="#607780">在相同前缀下：比较老师与学生</text>
+<rect x="47" y="1081" width="621" height="57" rx="13" fill="#E2F3EF"/>
+<text x="357.5" y="1120" font-size="31" font-weight="650" text-anchor="middle" fill="#087F77">老师相对更支持 → 提高生成倾向</text>
+<rect x="47" y="1153" width="621" height="47" rx="12" fill="#FFF0DC"/>
+<text x="357.5" y="1186" font-size="30" font-weight="650" text-anchor="middle" fill="#B76520">老师相对更不支持 → 降低倾向</text>
+<text x="47" y="1348" font-size="35" font-weight="750" text-anchor="start" fill="#3366A6">④ 更新学生，下一轮重新生成</text>
+<text x="47" y="1406" font-size="33" font-weight="650" text-anchor="start" fill="#3366A6">新的学生策略 → 新的回答轨迹</text>
+<text x="47" y="1453" font-size="31" font-weight="550" text-anchor="start" fill="#607780">再次由老师沿这条新轨迹提供概率</text>
+<line x1="357" y1="441" x2="357" y2="480" stroke="#607780" stroke-width="3" stroke-linecap="round" marker-end="url(#opd_loop_arrow_muted)"/>
+<line x1="357" y1="892" x2="357" y2="931" stroke="#607780" stroke-width="3" stroke-linecap="round" marker-end="url(#opd_loop_arrow_muted)"/>
+<line x1="357" y1="1240" x2="357" y2="1279" stroke="#607780" stroke-width="3" stroke-linecap="round" marker-end="url(#opd_loop_arrow_muted)"/>
+<path d="M693 1390 H725 V209 H704" fill="none" stroke="#3366A6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#opd_loop_arrow_blue)"/>
+<g opacity="0" transform="translate(357 441)">
+<animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.189999;0.190000;0.249999;0.250000;1" calcMode="discrete" dur="20s" begin="0s" repeatCount="indefinite"/>
+<g>
+<animateTransform attributeName="transform" type="translate" values="0 0;0 0;0 39;0 39" keyTimes="0;0.190000;0.250000;1" dur="20s" begin="0s" repeatCount="indefinite"/>
+<circle cx="0" cy="0" r="7" fill="#B76520"/>
+</g></g>
+<g opacity="0" transform="translate(357 892)">
+<animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.439999;0.440000;0.499999;0.500000;1" calcMode="discrete" dur="20s" begin="0s" repeatCount="indefinite"/>
+<g>
+<animateTransform attributeName="transform" type="translate" values="0 0;0 0;0 39;0 39" keyTimes="0;0.440000;0.500000;1" dur="20s" begin="0s" repeatCount="indefinite"/>
+<circle cx="0" cy="0" r="7" fill="#B76520"/>
+</g></g>
+<g opacity="0" transform="translate(357 1240)">
+<animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.689999;0.690000;0.749999;0.750000;1" calcMode="discrete" dur="20s" begin="0s" repeatCount="indefinite"/>
+<g>
+<animateTransform attributeName="transform" type="translate" values="0 0;0 0;0 39;0 39" keyTimes="0;0.690000;0.750000;1" dur="20s" begin="0s" repeatCount="indefinite"/>
+<circle cx="0" cy="0" r="7" fill="#B76520"/>
+</g></g>
+<g opacity="0" transform="translate(693 1390)">
+<animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.899999;0.9;0.994999;0.995;1" calcMode="discrete" dur="20s" begin="0s" repeatCount="indefinite"/>
+<g>
+<animateTransform attributeName="transform" type="translate" values="0 0;0 0;32 0;32 -1181;11 -1181;11 -1181" keyTimes="0;0.9;0.908;0.987;0.994;1" dur="20s" begin="0s" repeatCount="indefinite"/>
+<circle cx="0" cy="0" r="7" fill="#3366A6"/>
+</g></g>
+<line x1="32" y1="1532" x2="718" y2="1532" stroke="#D9E3E4" stroke-width="2" stroke-linecap="round"/>
+<text x="32" y="1571" font-size="29" font-weight="500" text-anchor="start" fill="#607780">简化展示概率反馈方向，不是逐步正确性标签。</text>
+<text x="32" y="1614" font-size="29" font-weight="500" text-anchor="start" fill="#607780">20 秒为过程演示节奏，不代表实际训练耗时。</text>
+</svg>
